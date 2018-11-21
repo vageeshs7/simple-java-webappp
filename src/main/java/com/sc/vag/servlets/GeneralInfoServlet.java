@@ -15,7 +15,7 @@ public class GeneralInfoServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("info", this.getServletInfo());
-        this.gotoPage("GeneralInfo.jsp", req, resp);
+        this.gotoPage("/GeneralInfo.jsp", req, resp);
     }
 
     private void gotoPage(String page, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
