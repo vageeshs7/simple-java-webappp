@@ -7,7 +7,7 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-		stage('Test') {
+		stage('Unit Test') {
             steps {
                 sh 'mvn test'
             }
@@ -31,7 +31,7 @@ pipeline {
                  sh 'curl -u both:tomcat http://localhost:8080/manager/text/list'
             }
          }
-        stage('Test') {
+        stage('Test Deploy') {
             steps {
                 sh 'curl http://localhost:8080/simple-java-webappp'
                 sh 'curl http://localhost:8080/simple-java-webappp/generalInfo'
