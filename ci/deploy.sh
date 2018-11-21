@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+pwd
 echo 'List Existing Applications'
 curl -u both:tomcat http://localhost:8080/manager/text/list
 
