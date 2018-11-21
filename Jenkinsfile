@@ -21,5 +21,10 @@ pipeline {
                 sh 'mvn install:install-file -Dfile=target/simple-java-webappp.war -DpomFile=pom.xml'
             }
         }
+        stage('Deploy') {
+             steps {
+                 sh './ci/deploy.sh'
+             }
+         }
     }
 }
