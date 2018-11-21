@@ -18,7 +18,7 @@ pipeline {
         }
 		stage('Publish') {
             steps {
-                sh 'mvn install:install-file -Dfile=target/simple-java-webappp.war'
+                sh 'mvn install:install-file -Dfile=target/simple-java-webappp.war -DpomFile=pom.xml'
             }
         }
     }
