@@ -12,6 +12,6 @@
 
   <servlet-mapping>
     <servlet-name>generalInfoServlet</servlet-name>
-    <url-pattern>generalInfo</url-pattern>
+    <url-pattern>/generalInfo</url-pattern>
   </servlet-mapping>
 </web-app>
