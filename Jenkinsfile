@@ -16,10 +16,10 @@ pipeline {
                 }
             }
         }
-/*		stage('Deliver') {
+		stage('Publish') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh 'mvn install:install-file -Dfile=target/simple-java-webappp.war'
             }
-        }*/
+        }
     }
 }
