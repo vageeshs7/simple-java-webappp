@@ -37,6 +37,7 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'target/**/*.war', fingerprint: true
             junit 'target/surefire-reports/*.xml'
+            deleteDir() /* clean up our workspace */
         }
     }
 }
