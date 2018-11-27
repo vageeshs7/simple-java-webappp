@@ -11,11 +11,6 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
         }
 		stage('Publish') {
             steps {
@@ -36,6 +31,12 @@ pipeline {
                 sh 'curl http://localhost:8080/simple-java-webappp'
                 sh 'curl http://localhost:8080/simple-java-webappp/generalInfo'
             }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'target/**/*.war', fingerprint: true
+            junit 'target/surefire-reports/*.xml'
         }
     }
 }
